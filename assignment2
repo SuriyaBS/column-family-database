@@ -1,0 +1,227 @@
+CREATE DATA:
+
+hbase(main):001:0> create 'cust1','name','hmtp','loc'
+0 row(s) in 1.3930 seconds
+
+=> Hbase::Table - cust1
+hbase(main):002:0> create 'consult','loc'
+0 row(s) in 1.2610 seconds
+
+=> Hbase::Table - consult
+hbase(main):003:0> create 'lab','name','dow','slry'
+0 row(s) in 1.2430 seconds
+
+=> Hbase::Table - lab
+hbase(main):004:0> create 'mat','steel','door','ratio','rt','pip'
+0 row(s) in 1.2440 seconds
+
+=> Hbase::Table - mat
+
+INSERT DATA:
+
+hbase(main):005:0> put 'cust1','0193','name','anu'
+0 row(s) in 0.1200 seconds
+
+hbase(main):006:0> put 'cust1','4567','name','vino'
+0 row(s) in 0.0120 seconds
+
+hbase(main):007:0> put 'cust1','2389','name','prem'
+0 row(s) in 0.0180 seconds
+
+hbase(main):008:0> put 'cust1','0193','hmtp','2bhk'
+0 row(s) in 0.0100 seconds
+
+hbase(main):009:0> put 'cust1','4567','hmtp','1bhk'
+0 row(s) in 0.0190 seconds
+
+hbase(main):011:0> put 'cust1','2389','hmtp','1bhk'
+0 row(s) in 0.0120 seconds
+
+hbase(main):012:0> put 'cust1','0193','loc','palani'
+0 row(s) in 0.0120 seconds
+
+hbase(main):013:0> put 'cust1','4567','loc','erode'
+0 row(s) in 0.0100 seconds
+
+hbase(main):014:0> put 'cust1','2389','loc','tirupur'
+0 row(s) in 0.0190 seconds
+
+hbase(main):015:0> put 'consult','bob','loc','chennai'
+0 row(s) in 0.0160 seconds
+
+hbase(main):016:0> put 'consult','sbi','loc','ooty'
+0 row(s) in 0.0130 seconds
+
+hbase(main):017:0> put 'consult','kvb','loc','karur'
+0 row(s) in 0.0080 seconds
+
+hbase(main):018:0> put 'lab','supervisor','name','kani'
+0 row(s) in 0.0160 seconds
+
+hbase(main):019:0> put 'lab','helper','name','ruba'
+0 row(s) in 0.0060 seconds
+
+hbase(main):020:0> put 'lab','helper','name','ranjith'
+0 row(s) in 0.0120 seconds
+
+hbase(main):021:0> put 'lab','supervisor','dow','241'
+0 row(s) in 0.0160 seconds
+
+hbase(main):022:0> put 'lab','helper','dow','200'
+0 row(s) in 0.0110 seconds
+
+hbase(main):023:0> put 'lab','helper','dow','198'
+0 row(s) in 0.0050 seconds
+
+hbase(main):024:0> put 'lab','supervisor','slry','45000'
+0 row(s) in 0.0090 seconds
+
+hbase(main):025:0> put 'lab','helper','slry','43000'
+0 row(s) in 0.0070 seconds
+
+hbase(main):026:0> put 'lab','helper','slry','38000'
+0 row(s) in 0.0220 seconds
+
+hbase(main):027:0> put 'mat','m20','steel','30tmt'
+0 row(s) in 0.0440 seconds
+
+hbase(main):028:0> put 'mat','m30','steel','20tmt'
+0 row(s) in 0.0160 seconds
+
+hbase(main):029:0> put 'mat','m80','steel','10tmt'
+0 row(s) in 0.0100 seconds
+
+hbase(main):030:0> put 'mat','m20','door','pw'
+0 row(s) in 0.0120 seconds
+
+hbase(main):031:0> put 'mat','m30','door','wpc'
+0 row(s) in 0.0080 seconds
+
+hbase(main):032:0> put 'mat','m80','door','sow'
+0 row(s) in 0.0110 seconds
+
+hbase(main):033:0> put 'mat','m20','ratio','1:1:5:3'
+0 row(s) in 0.0420 seconds
+
+hbase(main):034:0> put 'mat','m30','ratio','1:2:5:2'
+0 row(s) in 0.0090 seconds
+
+hbase(main):035:0> put 'mat','m80','ratio','1:1:2:1'
+0 row(s) in 0.0060 seconds
+
+hbase(main):037:0> put 'mat','m20','rt','brick'
+0 row(s) in 0.0130 seconds
+
+hbase(main):038:0> put 'mat','m30','rt','cement'
+0 row(s) in 0.0090 seconds
+
+hbase(main):039:0> put 'mat','m80','rt','limestone'
+0 row(s) in 0.0070 seconds
+
+hbase(main):040:0> put 'mat','m20','pip','10inch'
+0 row(s) in 0.0080 seconds
+
+hbase(main):041:0> put 'mat','m30','pip','15inch'
+0 row(s) in 0.0110 seconds
+
+hbase(main):042:0> put 'mat','m80','pip','20inch'
+0 row(s) in 0.0090 seconds
+
+READ DATA:
+
+hbase(main):043:0> scan 'cust1'
+ROW                       COLUMN+CELL                                                           
+ 0193                     column=hmtp:, timestamp=1679075485130, value=2bhk                     
+ 0193                     column=loc:, timestamp=1679075602673, value=palani                    
+ 0193                     column=name:, timestamp=1679075412356, value=anu                      
+ 2389                     column=hmtp:, timestamp=1679075578969, value=1bhk                     
+ 2389                     column=loc:, timestamp=1679075654552, value=tirupur                   
+ 2389                     column=name:, timestamp=1679075457058, value=prem                     
+ 4567                     column=hmtp:, timestamp=1679075516796, value=1bhk                     
+ 4567                     column=loc:, timestamp=1679075621952, value=erode                     
+ 4567                     column=name:, timestamp=1679075435089, value=vino                     
+3 row(s) in 0.0420 seconds
+
+hbase(main):044:0> scan 'consult'
+ROW                       COLUMN+CELL                                                           
+ bob                      column=loc:, timestamp=1679075699230, value=chennai                   
+ kvb                      column=loc:, timestamp=1679075741841, value=karur                     
+ sbi                      column=loc:, timestamp=1679075719719, value=ooty                      
+3 row(s) in 0.0170 seconds
+
+hbase(main):045:0> scan 'lab'
+ROW                       COLUMN+CELL                                                           
+ helper                   column=dow:, timestamp=1679075899276, value=198                       
+ helper                   column=name:, timestamp=1679075841862, value=ranjith                  
+ helper                   column=slry:, timestamp=1679075959793, value=38000                    
+ supervisor               column=dow:, timestamp=1679075865014, value=241                       
+ supervisor               column=name:, timestamp=1679075797457, value=kani                     
+ supervisor               column=slry:, timestamp=1679075922274, value=45000                    
+2 row(s) in 0.0240 seconds
+
+hbase(main):046:0> scan 'mat'
+ROW                       COLUMN+CELL                                                           
+ m20                      column=door:, timestamp=1679076054352, value=pw                       
+ m20                      column=pip:, timestamp=1679076286613, value=10inch                    
+ m20                      column=ratio:, timestamp=1679076119193, value=1:1:5:3                 
+ m20                      column=rt:, timestamp=1679076221759, value=brick                      
+ m20                      column=steel:, timestamp=1679075991921, value=30tmt                   
+ m30                      column=door:, timestamp=1679076072062, value=wpc                      
+ m30                      column=pip:, timestamp=1679076312252, value=15inch                    
+ m30                      column=ratio:, timestamp=1679076141867, value=1:2:5:2                 
+ m30                      column=rt:, timestamp=1679076238969, value=cement                     
+ m30                      column=steel:, timestamp=1679076012671, value=20tmt                   
+ m80                      column=door:, timestamp=1679076091589, value=sow                      
+ m80                      column=pip:, timestamp=1679076329984, value=20inch                    
+ m80                      column=ratio:, timestamp=1679076176699, value=1:1:2:1                 
+ m80                      column=rt:, timestamp=1679076257029, value=limestone                  
+ m80                      column=steel:, timestamp=1679076036705, value=10tmt                   
+3 row(s) in 0.0380 seconds
+
+UPDATE DATA:
+
+hbase(main):047:0> put 'mat','m80','rt','brick'
+0 row(s) in 0.0100 seconds
+
+hbase(main):048:0> scan 'mat'
+ROW                       COLUMN+CELL                                                           
+ m20                      column=door:, timestamp=1679076054352, value=pw                       
+ m20                      column=pip:, timestamp=1679076286613, value=10inch                    
+ m20                      column=ratio:, timestamp=1679076119193, value=1:1:5:3                 
+ m20                      column=rt:, timestamp=1679076221759, value=brick                      
+ m20                      column=steel:, timestamp=1679075991921, value=30tmt                   
+ m30                      column=door:, timestamp=1679076072062, value=wpc                      
+ m30                      column=pip:, timestamp=1679076312252, value=15inch                    
+ m30                      column=ratio:, timestamp=1679076141867, value=1:2:5:2                 
+ m30                      column=rt:, timestamp=1679076238969, value=cement                     
+ m30                      column=steel:, timestamp=1679076012671, value=20tmt                   
+ m80                      column=door:, timestamp=1679076091589, value=sow                      
+ m80                      column=pip:, timestamp=1679076329984, value=20inch                    
+ m80                      column=ratio:, timestamp=1679076176699, value=1:1:2:1                 
+ m80                      column=rt:, timestamp=1679076395053, value=brick                      
+ m80                      column=steel:, timestamp=1679076036705, value=10tmt                   
+3 row(s) in 0.0270 seconds
+
+DELETE DATA:
+
+hbase(main):049:0> delete 'mat','m80','rt'
+0 row(s) in 0.0140 seconds
+
+hbase(main):050:0> scan 'mat'
+ROW                       COLUMN+CELL                                                           
+ m20                      column=door:, timestamp=1679076054352, value=pw                       
+ m20                      column=pip:, timestamp=1679076286613, value=10inch                    
+ m20                      column=ratio:, timestamp=1679076119193, value=1:1:5:3                 
+ m20                      column=rt:, timestamp=1679076221759, value=brick                      
+ m20                      column=steel:, timestamp=1679075991921, value=30tmt                   
+ m30                      column=door:, timestamp=1679076072062, value=wpc                      
+ m30                      column=pip:, timestamp=1679076312252, value=15inch                    
+ m30                      column=ratio:, timestamp=1679076141867, value=1:2:5:2                 
+ m30                      column=rt:, timestamp=1679076238969, value=cement                     
+ m30                      column=steel:, timestamp=1679076012671, value=20tmt                   
+ m80                      column=door:, timestamp=1679076091589, value=sow                      
+ m80                      column=pip:, timestamp=1679076329984, value=20inch                    
+ m80                      column=ratio:, timestamp=1679076176699, value=1:1:2:1                 
+ m80                      column=rt:, timestamp=1679076257029, value=limestone                  
+ m80                      column=steel:, timestamp=1679076036705, value=10tmt                   
+3 row(s) in 0.0530 seconds
