@@ -26,3 +26,61 @@ To create tables, use the 'create' command followed by the table name and column
 
 Inserting Data:
 To insert data, use the 'put' command followed by the table name, row key, column family, column qualifier, and value separated by commas
+
+
+ Commands Used in this Project:
+
+Creating 'cust1' table with column families 'name', 'hmtp', and 'loc'
+create 'cust1','name','hmtp','loc'
+
+Inserting values into 'cust1' table:
+
+  put 'cust1','0193','name','anu'
+  put 'cust1','4567','name','vino'
+  put 'cust1','2389','name','prem'
+  put 'cust1','0193','hmtp','2bhk'
+  put 'cust1','4567','hmtp','1bhk'
+  put 'cust1','2389','hmtp','1bhk'
+  put 'cust1','0193','loc','palani'
+  put 'cust1','4567','loc','erode'
+  put 'cust1','2389','loc','tirupur'
+
+Creating 'consult' table with column family 'loc'
+create 'consult','loc'
+
+Inserting values into 'consult' table:
+
+  put 'consult','bob','loc','chennai'
+  put 'consult','sbi','loc','ooty'
+  put 'consult','kvb','loc','karur'
+
+Creating 'lab' table with column families 'name', 'dow', and 'slry'
+
+  create 'lab','name','dow','slry'
+
+Inserting values into 'lab' table:
+
+  put 'lab','supervisor','name','kani'
+  put 'lab','helper','name','ruba'
+  put 'lab','helper','name','ranjith'
+  put 'lab','supervisor','dow','241'
+  put 'lab','helper','dow','200'
+  put 'lab','helper','dow','198'
+  put 'lab','supervisor','slry','45000'
+  put 'lab','helper','slry','43000'
+  put 'lab','helper','slry','38000'
+
+Creating 'mat' table with column families 'steel', 'door', 'ratio', 'rt', and 'pip'
+
+  create 'mat','steel','door','ratio','rt','pip'
+
+Inserting values into 'mat' table:
+
+  put 'mat','m20','steel','30tmt'
+  put 'mat','m30','steel','20tmt'
+  put 'mat','m80','steel','10tmt'
+  put 'mat','m20','door','pw'
+  put 'mat','m30','door','wpc'
+  put 'mat','m80','door','sow'
+  put 'mat','m20','ratio','1:1:5:3'
+  put 'mat','m30','ratio','1
